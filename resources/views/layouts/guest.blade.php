@@ -10,11 +10,15 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
+        {{-- Icon --}}
+        <link rel="shortcut icon" href="{{asset('images/logo1.png')}}">
+
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="https://kit.fontawesome.com/6c98bb9397.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">

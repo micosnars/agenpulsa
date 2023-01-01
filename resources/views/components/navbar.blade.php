@@ -3,15 +3,15 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-div collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="navbar-brand" href="{{route('welcome')}}">
-                        <img src="https://isipulsa.web.id/assets/logo.png">
+                        <img src="{{asset('images/logo1.png')}}">
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">HOME</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">SHOP</a>
@@ -37,7 +37,7 @@
                                 <a href="{{route('dashboard')}}" class="dropdown-item">My Dashboard</a>
                             </li>
                             <li>
-                                <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Sign Out</a>
+                                <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Logout</a>
                                 <form id="logout-form" action="{{route('logout')}}" method="post" style="display: none">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 </form>
@@ -46,7 +46,7 @@
                     </a>
                 </div>
             @else
-                <div class="d-flex">
+                <div class="login-btn d-flex">
                     <a href="{{route('login')}}" class="btn btn-primary" style="padding-right: 30px;">
                         LOGIN
                     </a>
@@ -55,13 +55,9 @@
         </div>
     </div>
 </nav>
-<div class="hero">
-<div class="p-5 text-center bg-image" style="
-background-image: url('https://isipulsa.web.id/assets/main-banner6.png');
-height: 350px; width: 1000px; margin-left: 450px">
-<div class="mask">
-<div class="d-flex justify-content-center align-items-center h-100">
-  {{-- <div class="text-hero" style="padding-top: 50px">
+
+
+        {{-- <div class="text-hero" style="padding-top: 50px">
     <h1 class="mb-3">Heading</h1>
     <h4 class="mb-3">Subheading</h4>
     <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>

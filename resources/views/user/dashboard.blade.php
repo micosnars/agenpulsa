@@ -9,7 +9,7 @@
                         DASHBOARD
                     </p>
                     <h2 class="primary-header ">
-                        My Bootcamps
+                        My Checkouts 
                     </h2>
                 </div>
             </div>
@@ -19,11 +19,15 @@
                     <tbody>
                         @forelse ($checkouts as $checkout)
                             <tr class="align-middle">
-                                <td width="18%">
-                                    <img src="{{asset('images/item_bootcamp.png')}}" height="120" alt="">
+                                <td>
+                                    <div class="title-checkout col-lg-5 col-12 text-center">
+                                        <h2 class="price-checkout text-white pt-2">
+                                            {{$checkout->Camp->title}}
+                                        </h2>
+                                    </div>
                                 </td>
                                 <td>
-                                    <p class="mb-2">
+                                    <p class="mb-2 mt-2">
                                         <strong>{{$checkout->Camp->title}}</strong>
                                     </p>
                                     <p>
@@ -31,7 +35,7 @@
                                     </p>
                                 </td>
                                 <td>
-                                    <strong>${{$checkout->Camp->price}}k</strong>
+                                    <strong>Rp{{$checkout->Camp->price}}.000</strong>
                                 </td>
                                 <td>
                                     <strong>{{$checkout->payment_status}}</strong>
@@ -42,7 +46,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="https://wa.me/08xxxxxxxx?text=Hi, saya ingin bertanya tentang kelas {{$checkout->Camp->title}}" class="btn btn-primary">
+                                    <a target="_blank" href="https://wa.me/+6285216285045?text=Hi, saya ingin bertanya tentang {{$checkout->Camp->title}}" class="btn btn-primary">
                                         Contact Support
                                     </a>
                                 </td>

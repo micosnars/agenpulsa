@@ -67,7 +67,7 @@ class CheckoutController extends Controller
         $user = Auth::user();
         $user->email = $data['email'];
         $user->name = $data['name'];
-        $user->occupation = $data['occupation'];
+        // $user->occupation = $data['occupation'];
         $user->phone = $data['phone'];
         $user->address = $data['address'];
         $user->save();
