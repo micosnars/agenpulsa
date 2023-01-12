@@ -45,6 +45,21 @@
                                     @endif
                                 </div>
                                 <div class="mb-4">
+                                    <label class="form-label" for="provider">Provider</label>
+                                    <select id="provider" name="provider" type="text" class="form-control {{$errors->has('provider') ? 'is-invalid' : ''}}" value="{{old('provider') ?: Auth::user()->provider}}" required >
+                                        <option  disabled selected>Pilih Provider</option>
+                                        <option label="Telkomsel">Telkomsel</option>
+                                        <option label="XL">XL</option>
+                                        <option label="3">3</option>
+                                        <option label="Indosat Ooredo">Indosat Ooredo</option>
+                                        <option label="Smartfren">Smartfren</option>
+                                        <option label="Axis">Axis</option>
+                                    </select>
+                                    @if ($errors->has('provider'))
+                                        <p class="text-danger">{{$errors->first('provider')}}</p>
+                                    @endif
+                                </div>
+                                <div class="mb-4">
                                     <label class="form-label">Domisili</label>
                                     <input name="address" type="text" class="form-control {{$errors->has('address') ? 'is-invalid' : ''}}" value="{{old('address') ?: Auth::user()->address}}" required />
                                     @if ($errors->has('address'))
