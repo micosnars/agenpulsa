@@ -48,10 +48,6 @@ jobs:
         run: chmod -R 777 storage bootstrap/cache
       - name: Execute SSG
         run: npm run prod
-      - name: Execute SSG
-        env:
-          TORCHLIGHT_TOKEN: torch_KEpxphqpK8VzrjzjD48IV7HeMP946EASRwxNpOMd
-        run: php please ssg:generate
       - name: Directory Permissions
         run: chmod -R 777 storage
       - name: Upload artifact
